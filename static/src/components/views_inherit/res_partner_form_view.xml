@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<templates>
+    <t t-name="owl.ResPartnerFormView" t-inherit="web.FormView" owl="1">
+        <xpath expr="//Layout" position="inside">
+            <t t-set-slot="layout-actions">
+                <div>
+                    <div class="o_form_buttons_view" role="toolbar" aria-label="Main actions">
+                        <button class="btn btn-primary ms-2" t-on-click="()=> this.openWebsite(model.root.data.website)">Go To Website</button>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

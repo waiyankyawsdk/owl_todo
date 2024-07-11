@@ -18,12 +18,13 @@
     'version': '1.0',
     'sequence': -1,
     # any module necessary for this one to work correctly
-    'depends': ['base', 'web'],
+    'depends': ['base', 'web', 'sale'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/todo_list_views.xml'
+        'views/todo_list_views.xml',
+        'views/res_partner_views.xml'
     ],
     'application' : True,
     'installable' : True,

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<templates>
+    <t t-name="owl.ResPartnerKanbanView.Buttons" t-inherit="web.KanbanView.Buttons" owl="1">
+        <xpath expr="//div[hasclass('o_cp_buttons')]" position="inside">
+            <button class="btn btn-primary ms-2" t-on-click="openSaleView">View Sale Orders</button>
+            <button class="btn btn-secondary border ms-2" t-on-click="openInvoiceView">View Invoicies</button>
+            <button class="btn btn-success ms-2" t-on-click="openMeetingView">View Meetings</button>
+        </xpath>
+    </t>
+
+    <t t-name="owl.ResPartnerKanbanView" t-inherit="web.KanbanView" owl="1">
+        <xpath expr="//t[@t-component='props.Renderer']" position="before">
+            <div class="p-3 bg-white o_res_partner_view_sidebar">
+                <h2>Customer Locations</h2>
+
+                <div class="list-group">
+                    <t t-foreach="customerLocations" t-as="partner" t-key="partner.state_id[0]">
+                        <a class="list-group-item" href="#" t-on-click="()=> this.selectLocations(partner.state_id)">
+                            <span t-esc="partner.state_id[1]"/>
+                            <span t-esc="partner.state_id_count" class="badge bg-primary text-white"/>
+                        </a>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//Layout" position="attributes">
+            <attribute name="className">model.useSampleModel ? 'o_view_sample_data' : '' + 'd-flex'</attribute>
+        </xpath>
+    </t>
+</templates>
