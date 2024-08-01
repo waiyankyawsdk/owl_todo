@@ -23,6 +23,8 @@
                             <field name="name"/>
                             <field name="color" widget="color"/>
                             <field name="is_completed"/>
+                            <field name="email" widget="valid_email_field"/>
+                            <field name="username" widget="username"/>
                         </group>
                     </sheet>
                 </form>
