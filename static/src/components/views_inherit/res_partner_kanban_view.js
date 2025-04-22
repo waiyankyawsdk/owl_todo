@@ -52,12 +52,10 @@ class ResPartnerKanbanController extends KanbanController{
     }
 
     selectLocations(state){
-        this.env.searchModel.setDomainParts({
-            state : {
-                domain : [['state_id', '=', state[0]]],
-                faceLabel : state[1]
-            }
-        })
+        this.env.searchModel.createNewFilters([{
+            domain : [['state_id', '=', state[0]]],
+            description : state[1]
+        }])
     }
 }
 

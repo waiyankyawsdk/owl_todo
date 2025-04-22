@@ -8,3 +8,5 @@ class ToDo(models.Model):
     name = fields.Char(string="Task Name")
     is_completed = fields.Boolean()
     color = fields.Char()
+    username = fields.Char()
+    email = fields.Char()
